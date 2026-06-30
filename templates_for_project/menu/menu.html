@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковское приложение</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Левая панель меню -->
+        <div class="sidebar">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <h3>Иван Петров</h3>
+            </div>
+            
+            <div class="menu-items">
+                <button class="menu-btn" id="deposit-btn">
+                    <i class="fas fa-arrow-down"></i>
+                    Пополнение баланса
+                </button>
+                
+                <button class="menu-btn" id="withdraw-btn">
+                    <i class="fas fa-arrow-up"></i>
+                    Снять деньги
+                </button>
+                
+                <button class="menu-btn" id="change-account-btn">
+                    <i class="fas fa-user-sync"></i>
+                    Смена аккаунта
+                </button>
+            </div>
+        </div>
+        
+        <!-- Основной контент -->
+        <div class="main-content">
+            <div class="user-greeting">
+                <h1>Добро пожаловать, Иван Петров!</h1>
+                <p>Ваш банковский счет</p>
+            </div>
+            
+            <div class="balance-card">
+                <h2>Ваш баланс</h2>
+                <div class="balance-amount">0 ₽</div>
+                <div class="balance-details">
+                    <div class="balance-item">
+                        <div>Последние операции</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Модальное окно пополнения -->
+            <div class="modal" id="deposit-modal">
+                <div class="modal-content">
+                    <h2>Пополнение баланса</h2>
+                    <p>Введите сумму для пополнения:</p>
+                    <input type="number" id="deposit-amount" placeholder="Сумма в рублях" min="1">
+                    <div class="modal-actions">
+                        <button class="btn-cancel" id="cancel-deposit">Отмена</button>
+                        <button class="btn-confirm" id="confirm-deposit">Подтвердить</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Модальное окно снятия -->
+            <div class="modal" id="withdraw-modal">
+                <div class="modal-content">
+                    <h2>Снятие денег</h2>
+                    <p>Введите сумму для снятия:</p>
+                    <input type="number" id="withdraw-amount" placeholder="Сумма в рублях" min="1">
+                    <div class="modal-actions">
+                        <button class="btn-cancel" id="cancel-withdraw">Отмена</button>
+                        <button class="btn-confirm" id="confirm-withdraw">Подтвердить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
