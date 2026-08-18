@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковское приложение</title>
+    <link rel="stylesheet" href="{% static "css/style_menushka.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Левая панель меню -->
+        <div class="sidebar">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <h3>{{ username }}</h3>
+            </div>
+
+            <span class="name-tag">ИСТОРИЯ ОПЕРАЦИЙ</span>
+
+            <div class="history">
+                {% for operation in history %}
+                    <div class="item-of-history">
+                        <div>{{ operation.type }}</div>
+                        <div>{{ operation.money }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Основной контент -->
+        <div class="main-content">
+            <div class="user-greeting">
+                <h1>Добро пожаловать, {{ username }}!</h1>
+                <p>Ваш банковский счет</p>
+            </div>
+            
+            <div class="deposit-menu">
+
+                <div class="operations">
+                    <form method="post">
+                        {% csrf_token %}
+                        <button class="add-money" type="submit" value="add" name="action">
+                            <h2>Пополнить баланс</h2>
+                        </button>
+        
+                        <button class="withdraw-money" type="submit" value="withdraw" name="action">
+                            <h2>Снять деньги</h2>
+                        </button>
+                        
+                        <input type="number" name="input_field">
+                    </form>
+                    
+                </div>
+
+                <div class="check-balance">
+                    <h2>Посмотреть баланс</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -67,7 +67,8 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1px;
-    background-color: whitesmoke;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #ffffff, #a8dadc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -189,7 +190,7 @@ body {
 .additional-links {
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 15px;
 }
 
@@ -232,4 +233,83 @@ body {
 .security-info p {
     font-size: 1rem;
     letter-spacing: 0.5px;
+}
+
+/* Анимации */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    0% { transform: rotate(45deg) translateX(-100%); }
+    100% { transform: rotate(45deg) translateX(100%); }
+}
+
+/* Дополнительные эффекты */
+.login-box:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 15px;
+        min-height: 80vh;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .login-box {
+        padding: 30px 20px;
+    }
+    
+    .additional-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .security-info {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.7rem;
+    }
+    
+    .login-box h2 {
+        font-size: 1.5rem;
+    }
+    
+    .input-group input {
+        padding: 14px 15px 14px 45px;
+        font-size: 15px;
+    }
+    
+    .login-btn {
+        padding: 14px;
+        font-size: 15px;
+    }
 }

@@ -1,0 +1,38 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Банк Онлайн | Регистрация</title>
+{% endblock title %}
+
+{% block note %}
+    <p>Создайте свой аккаунт</p>
+{% endblock note %}
+
+{% block form %}
+    <h2>Регистрация нового пользователя</h2>
+    <form>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="fullname" name="fullname" placeholder="ФИО" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Пароль" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Подтвердите пароль" required>
+        </div>
+        <button type="submit" class="login-btn">
+            <i class="fas fa-user-plus"></i> Зарегистрироваться
+        </button>
+    </form>
+    <div class="additional-links">
+        <a href="{% url "index" %}"><i class="fas fa-sign-in-alt"></i> Уже есть аккаунт? Войти</a>
+    </div>
+{% endblock form %}

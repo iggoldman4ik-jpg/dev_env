@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Банк Онлайн | Вход</title>
+{% endblock title %}
+
+{% block note %}
+    <p>Ваш финансовый партнер</p>
+{% endblock note %}
+
+{% block form %}
+    <h2>Вход в личный кабинет</h2>
+    <form>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" name="username" placeholder="Введите логин" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+        </div>
+        <button type="submit" class="login-btn">
+            <i class="fas fa-sign-in-alt"></i> Войти
+        </button>
+    </form>
+    <div class="additional-links">
+        <a href="{% url "registration" %}"><i class="fas fa-user-plus"></i> Регистрация</a>
+        <a href="{% url "menu" %}"><i class="fas fa-user-plus"></i> Меню</a>
+    </div>
+{% endblock form %}
