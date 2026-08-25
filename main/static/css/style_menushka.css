@@ -92,22 +92,18 @@ body {
 }
 
 .user-greeting {
-    margin-bottom: 30px;
+    margin-bottom: 30px;  
 }
 
 .user-greeting h1 {
     color: white;
     font-size: 2.2rem;
-    margin-bottom: 10px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.user-greeting p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
+    text-align: center;
 }
 
 /* Карточка баланса */
+.user-info-menu,
 .deposit-menu {
     background: linear-gradient(to bottom, #eff3f71f, #cad7e762);
     border-radius: 20px;
@@ -115,6 +111,13 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
     margin-bottom: 30px;
+}
+
+.deposit-menu h2 {
+    color: #e9f3ff;
+    margin-bottom: 35px;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .operations {
@@ -139,61 +142,9 @@ body {
     transform: translateY(-3px);
 }
 
-.deposit-menu h2 {
-    color: #e9f3ff;
-    margin-bottom: 35px;
-    font-size: 1.5rem;
-    text-align: center;
-}
 
-.balance-amount {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    color: #1e5799;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
-    background: linear-gradient(to right, #1e5799, #2989d8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.balance-details {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.balance-item {
-    flex: 1;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.balance-item:hover {
-    transform: translateY(-3px);
-}
-
-.balance-item i {
-    font-size: 24px;
-    color: #1e5799;
-    margin-bottom: 10px;
-}
-
-.balance-item span {
-    display: block;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.balance-item strong {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1e5799;
+@media (max-width: 40rem){
+    .sidebar{
+        display: none;
+    }
 }

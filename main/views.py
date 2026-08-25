@@ -13,7 +13,8 @@ def registration(request):
     return render(request, 'main/registration.html')
 
 def menu(request):
-    context = {"username": "test123", 
+    context = {"username": "test123",
+                                "balance": "12345",
                                 "history": [{"type": "Пополнение", "money": "+200"}, 
                                             {"type": "Снятие", "money": "-100"},
                                             {"type": "Перевод", "money": "-50"}]}
@@ -30,5 +31,7 @@ def menu(request):
     if request.method == "GET":
         pass#context = {"username": "test123"}
     return render(request, 'main/menu.html', context)
+
+
 
 #press f funk operation😒 

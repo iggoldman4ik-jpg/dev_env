@@ -31,14 +31,17 @@
         </div>
         
         <!-- Основной контент -->
-        <div class="main-content">
-            <div class="user-greeting">
-                <h1>Добро пожаловать, {{ username }}!</h1>
-                <p>Ваш банковский счет</p>
+        <div class="main-content"> 
+            <div class="user-info-menu">
+                <div class="user-greeting">
+                    <h1>Добро пожаловать, {{ username }}!</h1>
+                </div>
+                <div>
+                    <h3>Ваш баланс: {{ balance }}</h3>
+                </div>
             </div>
             
             <div class="deposit-menu">
-
                 <div class="operations">
                     <form method="post">
                         {% csrf_token %}

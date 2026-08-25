@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа | Платеж</title>
+    <!-- Подключение нашего файла стилей -->
+    <link rel="stylesheet" href="{% static "css/style_pay_page.css" %}">
+</head>
+<body>
+
+    <div class="payment-container">
+        
+        <header class="payment-header">
+            <h1>💳 Оплата заказа</h1>
+            <p>Пожалуйста, проверьте все данные и нажмите кнопку ниже.</p>
+        </header>
+
+        <!-- Секция: Форма оплаты (Основной фокус) -->
+        <section class="form-section payment-card">
+            <h2>Данные платежной карты</h2>
+            <form action="#" method="POST" class="payment-form">
+                
+                <!-- Поле номера карты и имя владельца -->
+                <div class="input-group full-width">
+                    <label for="card_number">Номер карты</label>
+                    <div class="input-container">
+                        <span class="icon">💳</span>
+                        <input type="text" id="card_number" placeholder="XXXX XXXX XXXX 1234" required maxlength="19">
+                    </div>
+                </div>
+
+                <div class="input-group half-width">
+                    <label for="name_on_card">Имя на карте</label>
+                    <div class="input-container">
+                        <span class="icon">👤</span>
+                        <input type="text" id="name_on_card" placeholder="Иванов Иван Иванович" required maxlength="50">
+                    </div>
+                </div>
+
+                <!-- Поле срока действия и CVV -->
+                <div class="input-group flex-row">
+                    <div class="half-width date-group">
+                        <label for="expiry">Срок действия</label>
+                        <div class="input-container">
+                            <span class="icon">📅</span>
+                            <input type="text" id="expiry" placeholder="MM/YY" required maxlength="5">
+                        </div>
+                    </div>
+                    <div class="half-width cvv-group">
+                        <label for="cvv">CVV</label>
+                        <div class="input-container">
+                            <span class="icon">🔒</span>
+                            <input type="text" id="cvv" placeholder="***" required maxlength="4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопка оплаты -->
+                <button type="submit" class="pay-button">Оплатить 1230.00 ₽</button>
+            </form>
+        </section>
+
+
+        <!-- Секция: Итоговая сводка заказа (Summary) -->
+        <aside class="summary-section">
+            <h2>Сводка заказа</h2>
+            <div class="summary-item">
+                <span>Товар А (x2)</span>
+                <span class="price">2000.00 ₽</span>
+            </div>
+             <div class="summary-item">
+                <span>Доставка</span>
+                <span class="price">150.00 ₽</span>
+            </div>
+            <hr>
+            <div class="summary-total">
+                <span>Всего к оплате:</span>
+                <span class="price total-amount">2350.00 ₽</span>
+            </div>
+
+            <!-- Дополнительная информация для доверия -->
+            <div class="payment-guarantee">
+                ✅ Безопасная транзакция | 🔒 Шифрование SSL | ⭐ Гарантия возврата средств
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
