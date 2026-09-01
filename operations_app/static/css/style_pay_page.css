@@ -1,216 +1,31 @@
-/* --- Общие стили и сброс --- */
-:root {
-    --primary-color: #007bff; /* Синий акцент (цвет кнопки) */
-    --secondary-bg: #f9f9fb;  /* Светлый фон секций */
-    --text-dark: #333;        /* Темный текст */
-    --border-light: #ddd;     /* Светлая граница полей */
+h1, h2 {
+    color: azure;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5; /* Фон страницы */
     margin: 0;
-    padding: 40px 20px;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgba(30, 87, 153, 0.1) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(41, 137, 216, 0.1) 0%, transparent 20%);
+    z-index: 0;
+}
+
+.full-page-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-}
-
-/* --- Основной контейнер --- */
-.payment-container {
-    display: flex;
-    gap: 35px; /* Расстояние между формой и сводкой */
-    max-width: 1200px;
-    width: 90%;
-    background-color: #ffffff;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Эффект "поднятой" карточки */
-}
-
-/* --- Стили для заголовка страницы --- */
-.payment-header {
-    width: 100%;
-    margin-bottom: 20px;
-    text-align: center;
-}
-.payment-header h1 {
-    color: var(--primary-color);
-    font-size: 2em;
-    margin-bottom: 5px;
-}
-.payment-header p {
-    color: #666;
-}
-
-/* ======================================= */
-/* СТИЛИ ФОРМЫ ОПЛАТЫ (PAYMENT FORM)        */
-/* ======================================= */
-
-.form-section {
-    flex: 2; /* Занимает больше места, чем сводка */
-    padding-right: 30px;
-}
-
-.payment-card {
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Общие стили для групп полей */
-.input-group {
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--text-dark);
-    font-size: 0.95em;
-}
-
-/* Макеты для двух колонок */
-.flex-row {
-    display: flex;
-    gap: 20px;
-}
-
-.half-width {
-    flex: 1; /* Обе колонки занимают одинаковое пространство */
-}
-
-/* Стилизация контейнера ввода с иконкой */
-.input-container {
-    display: flex;
     align-items: center;
-    border: 1px solid var(--border-light);
-    border-radius: 6px;
-    padding: 0 15px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
-/* Иконки перед полями */
-.input-container .icon {
-    margin-right: 10px;
-    font-size: 1.2em;
-    color: #999;
-}
-
-/* Сами поля ввода (Input fields) */
-.input-container input[type="text"] {
-    border: none;
-    outline: none; /* Убираем стандартный синий фокус браузера */
-    flex-grow: 1;
-    padding: 12px 0;
-    font-size: 1em;
-}
-
-/* Эффект при фокусировке (имитация активности) */
-.input-container input[type="text"]:focus {
-    box-shadow: inset 0 0 0 1px var(--primary-color); /* Имитация подсветки фокуса */
-    background-color: #eef5ff;
-}
-
-/* --- Кнопка оплаты --- */
-.pay-button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-/* Эффект при наведении курсора */
-.pay-button:hover {
-    background-color: #0056b3; /* Чуть темнее синего */
-}
-
-/* ======================================= */
-/* СТИЛИ СВОДКИ ЗАКАЗА (SUMMARY)             */
-/* ======================================= */
-
-.summary-section {
-    flex: 1; /* Занимает меньше места, чем форма */
-    background-color: var(--secondary-bg);
-    padding: 25px;
-    border-radius: 8px;
-    height: fit-content; /* Важно, чтобы он не растягивался на всю высоту */
-}
-
-.summary-section h2 {
-    font-size: 1.4em;
-    margin-top: 0;
-    color: var(--text-dark);
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-/* Отдельные элементы в сводке */
-.summary-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    font-size: 1em;
-    color: #666;
-}
-
-/* Стиль для общих цен в сводке */
-.summary-item .price {
-    font-weight: bold;
-}
-
-/* Общий итог (Самая важная цена) */
-.summary-total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 2px solid #ccc;
-    font-size: 1.3em;
-}
-
-.summary-total .price {
-    color: var(--primary-color);
-    font-size: 1.4em;
-}
-
-/* Гарантия и доверие */
-.payment-guarantee {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    font-size: 0.9em;
-    color: green; /* Цвет успеха/доверия */
-}
-
-/* --- Адаптивность (Для телефонов) --- */
-@media (max-width: 800px) {
-    .payment-container {
-        flex-direction: column; /* На узких экранах элементы идут друг под другом */
-        padding: 20px;
-    }
-
-    /* Убираем лишние отступы, когда они в колонку */
-    .form-section, .summary-section {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 30px; /* Отделяем секции друг от друга вертикально */
-    }
-    
-    /* Возвращаем flex на основной контейнер для форм, чтобы они выстроились в ряд */
-     .flex-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .half-width {
-        width: 100%;
-        flex: none;
-    }
-}

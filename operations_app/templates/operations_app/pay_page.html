@@ -9,13 +9,18 @@
     <!-- Подключение нашего файла стилей -->
     <link rel="stylesheet" href="{% static "css/style_pay_page.css" %}">
 </head>
-<body>
-    <header>
-        <h1></h1>
-    </header>
+<body class="bg">
+    <div class="full-page-container">
+        <h1>Страница оплаты</h1>
+        <h2>{{ operation_title }}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="number">
 
-    <div class="main-container">
-
+            <button class="change-money" type="submit" value={{ operation_type }} name="action">
+                <p>{{ operation_button }}</p>
+            </button>
+        </form>    
     </div>
 </body>
 </html>

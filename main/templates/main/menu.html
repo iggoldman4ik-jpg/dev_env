@@ -43,7 +43,7 @@
             
             <div class="deposit-menu">
                 <div class="operations">
-                    <form method="post">
+                    <form method="get">
                         {% csrf_token %}
                         <button class="add-money" type="submit" value="add" name="action">
                             <h2>Пополнить баланс</h2>
@@ -53,7 +53,6 @@
                             <h2>Снять деньги</h2>
                         </button>
                         
-                        <input type="number" name="input_field">
                     </form>
                     
                 </div>

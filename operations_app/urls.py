@@ -22,5 +22,5 @@ from operations_app import views
 app_name = 'operations'
 
 urlpatterns = [
-    path("pay-page/", views.pay_page, name='pay')
+    path("", views.pay_page, name='pay')
 ]
