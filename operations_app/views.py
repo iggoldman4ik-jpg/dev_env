@@ -14,13 +14,13 @@ def pay_page(request):
     else:
        context={"operation_title": "Cнятие",
                                        "operation_type": "withdraw",
-                                       "operation_button": "Пополнить🤑"}  
+                                       "operation_button": "Снять🤑"}  
 
     
     if request.method == "GET":
         pass
     if request.method == "POST":
-        user = Users.objects.get(id=1)
+        user = Users.objects.get(id = request.user.id)
         action = request.POST.get("action")
         input_info=request.POST.get("input_field")
         if action == "add":

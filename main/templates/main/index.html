@@ -11,21 +11,14 @@
 
 {% block form %}
     <h2>Вход в личный кабинет</h2>
-    <form>
-        <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" id="username" name="username" placeholder="Введите логин" required>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="password" name="password" placeholder="Введите пароль" required>
-        </div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
         <button type="submit" class="login-btn">
             <i class="fas fa-sign-in-alt"></i> Войти
         </button>
     </form>
     <div class="additional-links">
         <a href="{% url "main:registration" %}"><i class="fas fa-user-plus"></i> Регистрация</a>
-        <a href="{% url "main:menu" %}"><i class="fas fa-user-plus"></i> Меню</a>
     </div>
 {% endblock form %}

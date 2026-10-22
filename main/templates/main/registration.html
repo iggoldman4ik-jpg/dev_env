@@ -11,14 +11,11 @@
 
 {% block form %}
     <h2>Регистрация нового пользователя</h2>
-    <form>
-        <div class="input-group">
+    <form method="POST">
+        {% csrf_token %}
+        {% comment %} <div class="input-group">
             <i class="fas fa-user"></i>
             <input type="text" id="fullname" name="fullname" placeholder="ФИО" required>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email" id="email" name="email" placeholder="Email" required>
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
@@ -27,7 +24,8 @@
         <div class="input-group">
             <i class="fas fa-lock"></i>
             <input type="password" id="confirm-password" name="confirm-password" placeholder="Подтвердите пароль" required>
-        </div>
+        </div> {% endcomment %}
+        {{ form }}
         <button type="submit" class="login-btn">
             <i class="fas fa-user-plus"></i> Зарегистрироваться
         </button>

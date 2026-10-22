@@ -154,6 +154,11 @@ body {
     font-weight: 500;
 }
 
+label[for="id_username"] {
+    font-size: 1.4rem;
+    color: white;
+}
+
 .input-group input:focus {
     border-color: #1e5799;
     box-shadow: 0 0 0 3px rgba(30, 87, 153, 0.2);

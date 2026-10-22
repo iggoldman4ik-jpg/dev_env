@@ -15,12 +15,13 @@
         <h2>{{ operation_title }}</h2>
         <form method="post">
             {% csrf_token %}
-            <input type="number">
+            <input type="number" name="input_field" required>
 
             <button class="change-money" type="submit" value={{ operation_type }} name="action">
                 <p>{{ operation_button }}</p>
             </button>
-        </form>    
+        </form>
+        <a href="{% url "main:menu" %}" class="exit-btn">Выход🔙</a>
     </div>
 </body>
 </html>
