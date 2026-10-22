@@ -17,8 +17,10 @@ class Operation(models.Model):
         DEPOSIT = "deposit", "пополнение"
         WITHDRAW = "withdraw", "снятие"
         TRANSFER = "transfer", "перевод"
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="Пользователь")
-    receiver = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="Получатель", null=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="Пользователь", on_delete=models.CASCADE, related_name="operations")
+    receiver = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="Получатель", null=True, on_delete=models.CASCADE, related_name="recieved_operations")
     amount = models.DecimalField(decimal_places=2, max_digits=11, verbose_name="Сумма", null=False)
     operation_type = models.CharField(max_length=12, choices=Type.choices, verbose_name="Тип операции")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="дейта")
+    
+    

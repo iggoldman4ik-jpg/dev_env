@@ -47,7 +47,7 @@ def menu(request):
                                             {"type": "Перевод", "money": "-50"}]}
     if request.method == "GET":
         action = request.GET.get("action")
-        if action == "add" or action == "withdraw":
+        if action in ["add", "withdraw", "transfer"]:
             target_url =  f"../operations/?operation={action}"
             return redirect(target_url)
     if request.method == "POST":

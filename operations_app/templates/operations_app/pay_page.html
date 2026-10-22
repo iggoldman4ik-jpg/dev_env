@@ -15,7 +15,7 @@
         <h2>{{ operation_title }}</h2>
         <form method="post">
             {% csrf_token %}
-            <input type="number" name="input_field" required>
+            <input type="number" name="amount" required>
 
             <button class="change-money" type="submit" value={{ operation_type }} name="action">
                 <p>{{ operation_button }}</p>

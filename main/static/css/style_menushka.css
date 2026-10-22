@@ -98,7 +98,7 @@ body {
 
 .form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
 }
 
@@ -135,7 +135,8 @@ body {
 }
 
 .add-money,
-.withdraw-money {
+.withdraw-money,
+.transfer-money {
     background: linear-gradient(to left, #1e5799, #578ebb);
     margin: 1rem ;
     padding: 1rem;
@@ -145,7 +146,8 @@ body {
 
 
 .add-money:hover,
-.withdraw-money:hover {
+.withdraw-money:hover,
+.transfer-money:hover {
     transform: translateY(-3px);
 }
 
